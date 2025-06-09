@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>КОПТИМ НЕ ГРУСТИМ</title>
+
+  <link rel="stylesheet" href="/.s/src/base.css" />
+  <link rel="stylesheet" href="/.s/src/layer3.css" />
+  <link rel="stylesheet" href="/.s/src/ulightbox/ulightbox.css" />
+
+  <script src="/.s/src/jquery-1.7.2.js"></script>
+  <script src="/.s/src/uwnd.js?2"></script>
+  <script src="/.s/src/ulightbox/ulightbox.js"></script>
+
+  <style>
+    a { color: #000; }
+
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #fff;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 100%;
+      padding: 1em;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    select, input[type="button"] {
+      font-size: 1em;
+      padding: 0.5em;
+      margin: 0.5em auto;
+      width: 100%;
+      max-width: 300px;
+    }
+
+    .likebtn-wrapper {
+      margin-top: 1em;
+    }
+
+    .reg-ball {
+      background: #f1f1f1;
+      border: 1px dashed #000;
+      color: #000;
+      opacity: 0.9;
+      padding: 8px;
+      position: fixed;
+      left: 10px;
+      bottom: 10px;
+      width: 90%;
+      max-width: 280px;
+      z-index: 99999;
+      font-size: 14px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    .reg-ball b {
+      display: block;
+      color: #f00;
+      padding: 10px 0;
+    }
+
+    @media (min-width: 600px) {
+      .container {
+        max-width: 600px;
+        margin: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="4nppbxsoz9eafwfa4n6nbwf74n41bwfu4gypdy6to8eafwfa4n.gif" alt="main image" />
+    <img src="monkey.gif" alt="monkey" />
+
+    <form>
+      <input type="button" value="КОПТИМ НЕ ГРУСТИМ" onclick="alert('Закоптить?')" />
+    </form>
+
+    <form name="form">
+      <select name="select" onchange="change()">
+        <option value="#ff0000">Красный</option>
+        <option value="#FFA500">Оранжевый</option>
+        <option value="#ffff00">Желтый</option>
+        <option value="#008000">Зеленый</option>
+        <option value="#ADD8E6">Голубой</option>
+        <option value="#0000ff">Синий</option>
+        <option value="#800080">Фиолетовый</option>
+        <option value="#FF19F7">Розовый</option>
+        <option value="#000000">Черный</option>
+        <option value="#ffffff">Белый</option>
+      </select>
+      <input type="button" name="btn" value="Закоптить фон" onclick="go()" />
+    </form>
+
+    <!-- Like button -->
+    <span class="likebtn-wrapper"
+      data-theme="custom"
+      data-icon_l="stck"
+      data-icon_l_c_v="#b110e9"
+      data-lang="ru"
+      data-i18n_like="Мне нравится коптить!"
+      data-identifier="item_1"
+      data-dislike_enabled="false"
+      data-share_enabled="false"
+      data-i18n_like_tooltip="Коптить!"
+      data-i18n_dislike_tooltip="Голос уже засчитан."
+      data-i18n_unlike_tooltip="Голос уже засчитан."
+      data-i18n_popup_text="Копти не грусти!"></span>
+
+    <script>
+      (function(d,e,s){
+        if(d.getElementById("likebtn_wjs")) return;
+        var a = d.createElement(e),
+            m = d.getElementsByTagName(e)[0];
+        a.async = 1;
+        a.id = "likebtn_wjs";
+        a.src = "//w.likebtn.com/js/w/widget.js";
+        m.parentNode.insertBefore(a, m);
+      })(document, "script", "script");
+    </script>
+
+    <br><br>
+    <div>Version 2.42</div>
+  </div>
+
+  <div class="reg-ball">
+    <b>Новости копчения</b>
+    Сайт внезапно возродился, как Феникс из пепла! В будущем нас мб что-то и ждет и еще больше копчения!
+  </div>
+
+  <script>
+    function go() {
+      const sel = document.form.select;
+      document.body.style.backgroundColor = sel.options[sel.selectedIndex].value;
+    }
+
+    function change() {
+      // можно использовать при необходимости
+    }
+  </script>
+</body>
+</html>
